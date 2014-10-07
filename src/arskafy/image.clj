@@ -1,4 +1,4 @@
-(ns synterify.image
+(ns arskafy.image
   (:require [clojure.java.io :as io])
   (:import
     (java.awt.image BufferedImage)
@@ -7,7 +7,7 @@
     (java.io ByteArrayOutputStream File)
     (java.net URL)))
 
-(def overlay-url (io/resource "synterionkalja.png"))
+(def overlay-url (io/resource "arskafy.png"))
 
 (defn- get-image-size
   [buffered-image]
@@ -51,7 +51,7 @@
                        (:y output-image-size)
                        BufferedImage/TYPE_INT_RGB)
         output-graphics (.getGraphics output-image)
-        output-file (File/createTempFile "synterify-" ".jpg")]
+        output-file (File/createTempFile "arskafy-" ".jpg")]
     (.drawImage output-graphics
                 image 0 0
                 (get-in output-image-size [:image-scaled-size :x])

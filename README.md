@@ -1,4 +1,4 @@
-# synterify
+# arskafy
 
 vitu awesome
 

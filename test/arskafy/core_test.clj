@@ -1,6 +1,6 @@
-(ns synterify.core-test
+(ns arskafy.core-test
   (:require [clojure.test :refer :all]
-            [synterify.core :refer :all]))
+            [arskafy.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

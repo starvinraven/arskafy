@@ -1,11 +1,11 @@
-(ns synterify.s3
+(ns arskafy.s3
   (:require [aws.sdk.s3 :as s3]
             [digest :as digest]))
 
 (def cred {:access-key (System/getenv "S3_KEY")
            :secret-key (System/getenv "S3_SECRET")})
 
-(def bucket "synterify-images")
+(def bucket "arskafy-images")
 
 (def have-creds? (and
                    (:access-key cred)

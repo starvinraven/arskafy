@@ -1,4 +1,4 @@
-(defproject synterify "0.1.0-SNAPSHOT"
+(defproject arskafy "0.1.0-SNAPSHOT"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :license {:name "Eclipse Public License"
@@ -13,6 +13,6 @@
             :lesscss-paths ["resources/less"]
             :lesscss-output-path "resources/public/css"
             :node-dependencies [[coffee-script "1.8.0"]]
-            :main synterify.core
+            :main arskafy.core
             :min-lein-version "2.0.0"
             :profiles {:uberjar {:aot :all}})

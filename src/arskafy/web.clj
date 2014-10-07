@@ -1,11 +1,11 @@
-(ns synterify.web
+(ns arskafy.web
   (:require [org.httpkit.server :as httpkit]
             [compojure.core :as compojure]
             [compojure.handler :as handler]
             [compojure.route :as route]
             [ring.util.response :as resp]
-            [synterify.image :as image]
-            [synterify.s3 :as s3]))
+            [arskafy.image :as image]
+            [arskafy.s3 :as s3]))
 
 (declare handle-request)
 
