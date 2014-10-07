@@ -2,15 +2,24 @@
 <head>
   <title>arskafy</title>
   <link href="/css/index.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body id="index">
-<h1>arskafy</h1>
 
-<div>
-  <input placeholder="Enter image URL pls" id="url-input">
-  <button id="submit-button" disabled="disabled">Gimme</button>
+<div class="stripe">
+  <div class="main">
+    <h1>Arskafy Yourself</h1>
+    <div>
+      <input type="text" placeholder="Enter image URL pls" id="url-input">
+      <button id="submit-button" disabled="disabled">Gimme</button>
+    </div>
+  </div>
 </div>
-<ul id="images"></ul>
+
+<div class="image-container">
+  <ul id="images"></ul>
+</div>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.22/Bacon.min.js"></script>
 <script src="/js/index.js"></script>

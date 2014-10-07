@@ -18,10 +18,15 @@
   [f m]
   (into {} (for [[k v] m] [k (f v)])))
 
+(defn int-mul
+  [a b]
+  (int (* a b)))
+
 (defn- get-output-size
   [overlay image]
   (let [overlay-size (get-image-size overlay)
         image-size (get-image-size image)
+        _ (println "overlay" overlay-size "image" image-size)
         output-height (Math/min
                         (:y overlay-size)
                         (:y image-size))
@@ -34,9 +39,9 @@
                                (:x overlay-size)))
                        (int (* image-scale-factor
                                (:x image-size))))
-        overlay-scaled-size (map-values (partial * overlay-scale-factor) overlay-size)
-        image-scaled-size (map-values (partial * image-scale-factor) image-size)
-        ]
+        overlay-scaled-size (map-values (partial int-mul overlay-scale-factor) overlay-size)
+        image-scaled-size (map-values (partial int-mul image-scale-factor) image-size)]
+    (println "sizes" output-width (:x overlay-scaled-size) (:x image-scaled-size))
     {:x                   output-width
      :y                   output-height
      :overlay-pos-x       (- output-width (:x overlay-scaled-size))

@@ -3,9 +3,10 @@
 
   init = function() {
     var inputValid;
-    inputValid = $('#url-input').asEventStream('input').map(getUrl).map(isValidUrl).startWith(false).onValue(function(isValid) {
+    inputValid = $('#url-input').asEventStream('input').map(getUrl).map(isValidUrl).onValue(function(isValid) {
       return $('#submit-button').prop('disabled', !isValid);
     });
+    $('#url-input').trigger('input');
     return $('#submit-button').asEventStream('click').map(getUrl).onValue(function(url) {
       var li, src;
       src = "/doit?url=" + url;
@@ -14,7 +15,8 @@
       }), $('<a>', {
         href: src
       }).text("Link"));
-      return $('#images').prepend(li);
+      $('#url-input').val('');
+      $('#images').prepend(li);
     });
   };
 

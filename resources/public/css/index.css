@@ -1,3 +1,81 @@
-#index li {
-  list-style: none;
+body {
+    background-color: #56ddea;
+    margin: 0;
+    background: url('/bg.jpg') no-repeat;
+    background-size: cover;
+    font-family: arial, helvetica, clean, sans-serif;
+}
+
+.stripe {
+    padding: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ff0;
+    margin-top: 125px;
+    padding: 10px 0;
+}
+
+.main {
+    text-align: center;
+    margin: 0 100px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 80%;
+}
+
+.image-container a {
+    display: block;
+    background: #f00;
+    color: #fff;
+    width: 100px;
+}
+
+h1 {
+    font-size: 7vw;
+    text-transform: uppercase;
+    margin: 25px 0;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 20px;
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+}
+
+button {
+    color: #ffffff;
+    font-size: 20px;
+    background: #f00;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+}
+
+button:disabled {
+    background: #ccc;
+    color: #999;
 }
