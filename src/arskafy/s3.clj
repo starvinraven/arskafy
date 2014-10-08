@@ -11,6 +11,8 @@
                    (:access-key cred)
                    (:secret-key cred)))
 
+(println "have s3 creds?" have-creds?)
+
 (when have-creds?
   (s3/create-bucket cred bucket))
 
