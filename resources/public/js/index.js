@@ -1,5 +1,7 @@
 (function() {
-  var getUrl, init, isValidUrl;
+  var getUrl, init, isValidUrl, errorHtml;
+
+  errorHtml = '<p class="error">Oops, couldn\'t load this image!</p>';
 
   init = function() {
     var inputValid;
@@ -8,11 +10,12 @@
     });
     $('#url-input').trigger('input');
     return $('#submit-button').asEventStream('click').map(getUrl).onValue(function(url) {
-      var li, src;
+      var li, src, img;
       src = "/doit?url=" + url;
-      li = $('<li>').append($('<img>', {
-        src: src
-      }), $('<a>', {
+      img = $('<img>', {src: src}).error(function() {
+          $(this).closest('li').html(errorHtml);
+      })
+      li = $('<li>').append(img, $('<a>', {
         href: src
       }).text("Link"));
       $('#url-input').val('');

@@ -36,6 +36,14 @@ body {
     width: 100px;
 }
 
+.error {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    width:100px;
+    display: inline;
+}
+
 h1 {
     font-size: 7vw;
     text-transform: uppercase;
@@ -44,10 +52,11 @@ h1 {
 
 li {
     list-style: none;
+    min-height: 40px;
 }
 
 li a {
-    margin: 0 auto 20px auto;
+    margin: 20px auto;
     padding: 10px;
     text-decoration: none;
     text-transform: uppercase;
