@@ -9,10 +9,10 @@
       return('<a href="https://twitter.com/share" class="twitter-share-button" data-url="'+url+'" data-text="I just took a selfie with Arnold. Take yours: http://arskafy.fi" data-related="ReaktorNow" data-hashtags="reaktorarska">Tweet</a>');
   }
 
-//  fbButtonHtml = function(url) {
-//      return('<fb:share-button href="'+url+'">Share on Facebook</fb:share-button>');
-//      // return('<div class="fb-share-button" data-href="'+url+'">Share on Facebook</div>');
-//  }
+  fbButtonHtml = function(url) {
+      return('<fb:share-button layout="button_count" href="'+url+'">Share on Facebook</fb:share-button>');
+      // return('<div class="fb-share-button" data-href="'+url+'">Share on Facebook</div>');
+  }
 
   init = function() {
     var inputValid;
@@ -27,12 +27,12 @@
       });
       var url = 'http://arskafy.fi' + src;
       var tweetButton = $(tweetButtonHtml(url));
-      // var fbButton = $(fbButtonHtml(url));
+      var fbButton = $(fbButtonHtml(url));
       var imageLink = $('<a>', {href: src}).text("Link");
-      li = $('<li>').append(img, imageLink, tweetButton);
+      li = $('<li>').append(img, imageLink, tweetButton, fbButton);
       $('#url-input').val('');
       $('#images').prepend(li);
-      // FB.XFBML.parse();
+      FB.XFBML.parse();
       twttr.widgets.load();
     });
   };
